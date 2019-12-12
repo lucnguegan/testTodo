@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../interfaces/todo';
-import { TodoService } from '../services/todo-form.service';
+import { Todo } from '../../interfaces/todo';
+import { TodoService } from '../../services/todo-form.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

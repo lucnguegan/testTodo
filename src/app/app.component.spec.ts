@@ -5,6 +5,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,13 +14,15 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes([]),
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        FormsModule
       ],
       declarations: [
         AppComponent,
         NavbarComponent,
         TodoFormComponent,
-        TodoListComponent
+        TodoListComponent,
+        
       ],
     }).compileComponents();
   }));
@@ -49,23 +52,11 @@ describe('AppComponent', () => {
   });
 
 
-  it(`should have as title 'testAngular'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('testAngular');
-  });
+  // it(`should have as title 'testAngular'`, () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.debugElement.componentInstance;
+  //   expect(app.title).toEqual('testAngular');
+  // });
 
-  
-
-
-
-  
-
-  /* it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('testAngular app is running!');
-  }); */
 });
 

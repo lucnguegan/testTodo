@@ -1,0 +1,29 @@
+<div class="titre">
+    <p>ToDos</p>
+</div>
+
+<div class="card card-body mb-2" *ngFor="let todo of todos; let i = index">
+    <!-- <div *ngIf="!todo; then thenBlock else elseBlock">
+        <ng-template #thenBlock class="thenBlock">
+            <p>
+                Keine ToDo In der Moment
+            </p>
+        </ng-template>
+        <ng-template #elseBlock class="elseBlock">
+
+            
+        </ng-template>
+    </div> -->
+
+    <ul style="list-style-type:none">
+        <!-- <li>
+            id: {{todo._id}}
+        </li> -->
+        <li>
+            {{i+1}}. {{todo.nameTodo}} <button (click)="deleteTodo(todo._id)"
+                class="btn btn-danger"><b>Löschen</b></button>
+        </li>
+
+    </ul>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="titre">
+    ToDo app
+</div>
+
+
+
+
+<div class="body">
+    <div class="inputButton">
+        <form (ngSubmit)="submitTodo()">
+            <div class="form-group">
+                <input [(ngModel)]="nameTodo" (keyup.enter)="nameTodo=''" class="textfield" name="nameTodo"
+                    placeholder="ToDo schreiben">
+                <button type="submit" [disabled]="!nameTodo" class="btn btn-success btn-circle btn-xl" value="submit">
+                    <h4><b>+</b></h4>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div [hidden]="!nameTodo">
+        Typing: {{ nameTodo }}
+    </div>
+
+
+    <td>
+        <tr *ngFor="let todo of todos; let i=index">
+            <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
+            <span [ngClass]="{'checked': nameTodo.completed}">{{i+1}}. {{ todo.nameTodo }}</span>&nbsp;&nbsp;
+            <button (click)="deleteTodo(i)" class="btn btn-danger">Löschen</button>&nbsp;
+
+        </tr>
+    </td>
+    <hr>
+    <div *ngIf="todos.length > 0">
+        <button (click)="deleteSelectedTodos()" class="btn btn-danger">
+            <h5>Ausgewählte löschen</h5>
+        </button>
+        <div>
+            <h3><label><input type="checkbox">Alle auswählen</label></h3>
+        </div>
+        <br>
+        <div>
+            <h3>{{ remaining() }} verbleibende Artikel</h3>
+        </div>
+        <br>
+        <button (click)="addDataBase()" class="btn btn-danger">Send to database</button>
+    </div>
+
+    <br><br>
+
+</div>
